@@ -22,8 +22,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Homely - Luxury Real Estate",
-  description: "Discover your next luxury residence with Homely.",
+  title: "Realtors World | Real Estate",
+  description: "Discover your next Real Estate with Realtors World.",
 };
 
 export default function RootLayout({
