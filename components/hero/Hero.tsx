@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       className="relative w-full min-h-screen flex flex-col justify-between bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: "url('/heroBg.avif')" }}
+      style={{ backgroundImage: "url('/herobg.avif')" }}
     >
       {/* ─── Floating Navbar ─── */}
       <Navbar />
