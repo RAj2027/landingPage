@@ -1,71 +1,62 @@
 import React from "react";
-import Image from "next/image";
 import Navbar from "../navbar/Navbar";
 import PropertyCard from "../property/PropertyCard";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between">
-      {/* Navbar */}
+    <section 
+      className="relative w-full min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/heroBg.avif')" }}
+    >
+      {/* ─── Floating Navbar ─── */}
       <Navbar />
 
-      {/* Main Hero Section */}
-      <section className="relative flex-1 flex flex-col justify-center min-h-[600px] md:h-[800px] 2xl:h-[900px] w-full pt-20">
-        {/* Hero Image Container */}
-        <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-900">
-          <Image
-            src="/herobg.avif"
-            alt="Luxury Real Estate Hero Background"
-            fill
-            priority
-            className="object-cover object-center opacity-70"
-          />
-          {/* Subtle overlay for text contrast in skeleton */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="mx-auto flex h-full w-full max-w-[1400px] flex-col justify-center px-6 py-12 lg:px-10 z-10">
-          <div className="max-w-3xl flex flex-col items-start gap-6">
+      {/* ─── Hero Content Area ─── */}
+      <div className="flex-1 flex flex-col justify-between pt-24 sm:pt-28 md:pt-32">
+        {/* ─── Left Content Block ─── */}
+        <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-10 flex-1 flex items-center">
+          <div className="flex flex-col items-start gap-6 sm:gap-8 max-w-2xl py-12 sm:py-16 md:py-0">
             {/* Location Label */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-widest text-white">
-              <span>📍 Los Angeles, California</span>
-            </div>
+            <p className="font-accent text-sm sm:text-base font-semibold italic text-white/90 tracking-wide">
+              Palm Springs, CA
+            </p>
 
-            {/* Large Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
-              Discover Your Next Luxury Residence
+            {/* Large Hero Heading */}
+            <h1 className="font-display text-[52px] sm:text-[64px] md:text-[72px] lg:text-[88px] font-bold text-white leading-[1.02] tracking-tight">
+              Futuristic
+              <br />
+              Haven
             </h1>
 
             {/* CTA Button Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mt-2">
-              <a
-                href="#explore"
-                className="px-8 py-4 bg-white text-gray-900 font-semibold text-center text-sm hover:bg-gray-100 transition-colors shadow-sm"
-              >
-                Explore Properties
-              </a>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto mt-1">
+              {/* Primary Button — white fill, charcoal text, pill */}
               <a
                 href="#contact"
-                className="px-8 py-4 bg-black/40 backdrop-blur-md border border-white/30 text-white font-semibold text-center text-sm hover:bg-black/60 transition-colors"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-charcoal font-sans text-sm font-semibold rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200 select-none"
               >
-                Contact an Agent
+                Get in touch
+              </a>
+
+              {/* Secondary Button — transparent, white border, white text, pill */}
+              <a
+                href="#details"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/40 text-white font-sans text-sm font-semibold rounded-full hover:bg-white/10 transition-colors duration-200 select-none"
+              >
+                View Details
               </a>
             </div>
           </div>
         </div>
 
-        {/* Floating Property Information Card */}
-        {/* 
-          Responsive positioning:
-          - Mobile (< 810px/md): Relative flow at bottom of hero section
-          - Tablet/Desktop (>= md): Absolute positioned at bottom-right
-        */}
-        <div className="relative md:absolute md:bottom-0 md:right-0 z-20 w-full md:w-[90%] lg:w-[85%] max-w-[1200px]">
-          <PropertyCard />
+        {/* ─── Floating Bottom Property Card ─── */}
+        <div className="relative z-10 w-full">
+          <div className="mx-auto w-full max-w-[1400px] px-0 md:px-6 lg:px-10">
+            <PropertyCard />
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

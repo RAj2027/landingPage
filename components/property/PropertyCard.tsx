@@ -1,80 +1,87 @@
 import React from "react";
-import Surface from "../ui/Surface";
-import PropertyFeatureItem from "./PropertyFeatureItem";
-import VerticalDivider from "./VerticalDivider";
-import Button from "../ui/button/Button";
 
 const PropertyCard: React.FC = () => {
   return (
-    <Surface
-      variant="glass"
-      padding="md"
-      className="w-full lg:w-auto !p-6 sm:!p-8"
-    >
-      {/* 
-        Responsive layout: 
-        - Mobile (< 810px/md): 2x2 Grid (grid-cols-1 sm:grid-cols-2 gap-6)
-        - Tablet/Desktop (>= md): Horizontal Flex Row (flex-row gap-6 md:gap-8 lg:gap-[40px])
-      */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row md:items-center justify-between gap-6 md:gap-8 lg:gap-[40px]">
-        {/* Item 1: Property Title & Location */}
-        <PropertyFeatureItem
-          label="Featured Property"
-          value="Skyline Penthouse"
-          subtext="Beverly Hills, CA"
-          valueSize="lg"
-        />
+    <div className="w-full bg-white rounded-t-2xl md:rounded-2xl shadow-[0_-4px_40px_-8px_rgba(23,32,35,0.12)] px-6 py-6 sm:px-8 sm:py-7 md:px-10 md:py-8">
+      <div className="flex flex-wrap items-center gap-6 sm:gap-8 md:gap-0 md:justify-between">
+        {/* Feature Item 1: Bedrooms */}
+        <div className="flex items-center gap-3.5 md:flex-1 md:justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-cream/60 flex items-center justify-center shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172023" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 4v16" />
+              <path d="M22 4v16" />
+              <path d="M2 8h20" />
+              <path d="M2 16h20" />
+              <path d="M2 12h8" />
+              <path d="M14 12h8" />
+              <rect x="6" y="8" width="4" height="4" rx="1" />
+              <rect x="14" y="8" width="4" height="4" rx="1" />
+            </svg>
+          </div>
+          <span className="font-sans text-sm font-medium text-charcoal/80">Bedrooms</span>
+        </div>
 
-        <VerticalDivider className="hidden md:block" />
+        {/* Vertical Divider */}
+        <div className="hidden md:block w-px h-10 bg-gray-200/80 shrink-0" aria-hidden="true" />
 
-        {/* Item 2: Price */}
-        <PropertyFeatureItem
-          label="Price"
-          value="$3,850,000"
-          subtext="Est. $14,200/mo"
-          valueSize="lg"
-          highlight
-        />
+        {/* Feature Item 2: Swingpool */}
+        <div className="flex items-center gap-3.5 md:flex-1 md:justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-cream/60 flex items-center justify-center shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172023" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 12h20" />
+              <path d="M2 16c1.5-1 3-2 4-2s2.5 1 4 2 3 2 4 2 2.5-1 4-2" />
+              <path d="M2 20c1.5-1 3-2 4-2s2.5 1 4 2 3 2 4 2 2.5-1 4-2" />
+              <path d="M9 12V8a3 3 0 0 1 6 0v4" />
+              <line x1="6" y1="12" x2="6" y2="8" />
+            </svg>
+          </div>
+          <span className="font-sans text-sm font-medium text-charcoal/80">Swingpool</span>
+        </div>
 
-        <VerticalDivider className="hidden md:block" />
+        {/* Vertical Divider */}
+        <div className="hidden md:block w-px h-10 bg-gray-200/80 shrink-0" aria-hidden="true" />
 
-        {/* Item 3: Specs */}
-        <PropertyFeatureItem
-          label="Specifications"
-          value="4 Beds • 4.5 Baths"
-          subtext="4,200 sq. ft."
-          valueSize="lg"
-        />
+        {/* Feature Item 3: Parking Space */}
+        <div className="flex items-center gap-3.5 md:flex-1 md:justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-cream/60 flex items-center justify-center shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172023" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 21V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12" />
+              <path d="M1 21h22" />
+              <path d="M9 7V3h6v4" />
+              <rect x="6" y="13" width="4" height="4" rx="0.5" />
+              <rect x="14" y="13" width="4" height="4" rx="0.5" />
+            </svg>
+          </div>
+          <span className="font-sans text-sm font-medium text-charcoal/80">Parking Space</span>
+        </div>
 
-        <VerticalDivider className="hidden md:block" />
+        {/* Vertical Divider */}
+        <div className="hidden md:block w-px h-10 bg-gray-200/80 shrink-0" aria-hidden="true" />
 
-        {/* Item 4: CTA / Action */}
-        <div className="flex items-center sm:border-t sm:border-l sm:border-gray-200 sm:pt-6 sm:pl-6 md:border-t-0 md:border-l-0 md:pt-0 md:pl-0">
-          <Button
-            variant="primary"
-            size="md"
-            href="#view-property"
-            icon={
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            }
-          >
-            View Details
-          </Button>
+        {/* Selling Price */}
+        <div className="flex flex-col md:flex-1 md:items-center">
+          <span className="font-display text-xl sm:text-2xl md:text-[26px] font-bold tracking-tight text-charcoal leading-none">
+            $ 4,750,000
+          </span>
+          <span className="text-xs sm:text-sm text-slate font-sans mt-1">
+            For selling price
+          </span>
+        </div>
+
+        {/* Vertical Divider */}
+        <div className="hidden lg:block w-px h-10 bg-gray-200/80 shrink-0" aria-hidden="true" />
+
+        {/* Made in Framer Badge */}
+        <div className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-cream/50 rounded-full border border-gray-200/60">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#172023">
+            <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z" />
+          </svg>
+          <span className="font-sans text-sm font-semibold text-charcoal tracking-tight">
+            Made in Framer
+          </span>
         </div>
       </div>
-    </Surface>
+    </div>
   );
 };
 
