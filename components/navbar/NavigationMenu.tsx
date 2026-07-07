@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import TextRoll from "../animations/TextRoll";
 
 interface NavigationMenuProps {
   isOpen: boolean;
@@ -173,13 +174,16 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isOpen, onClose }) => {
             >
               {navItems.map((item) => (
                 <motion.div key={item.label} variants={itemVariants}>
-                  <a
+                  <motion.a
                     href={item.href}
                     onClick={onClose}
-                    className="group inline-flex items-center gap-4 font-display text-[32px] sm:text-[38px] lg:text-[44px] font-bold tracking-tight text-charcoal hover:text-mint transition-colors duration-200 select-none"
+                    initial="initial"
+                    whileHover="hover"
+                    whileFocus="hover"
+                    className="group inline-flex items-center gap-4 font-display text-[32px] sm:text-[38px] lg:text-[44px] font-bold tracking-tight text-charcoal hover:text-mint transition-colors duration-200 select-none cursor-pointer"
                   >
                     <span className="relative">
-                      {item.label}
+                      <TextRoll center={true}>{item.label}</TextRoll>
                       {/* Subtle underline on hover */}
                       <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-mint transition-all duration-300 group-hover:w-full rounded-full" />
                     </span>
@@ -197,7 +201,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isOpen, onClose }) => {
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
-                  </a>
+                  </motion.a>
                 </motion.div>
               ))}
             </motion.nav>

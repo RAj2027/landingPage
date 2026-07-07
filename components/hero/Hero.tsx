@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
 import PropertyCard from "../property/PropertyCard";
+import TextRoll from "../animations/TextRoll";
 
 const Hero: React.FC = () => {
   return (
@@ -12,10 +13,10 @@ const Hero: React.FC = () => {
       <Navbar />
 
       {/* ─── Hero Content Area ─── */}
-      <div className="relative flex-1 flex flex-col justify-between pt-24 sm:pt-28 md:pt-32">
+      <div className="relative flex-1 flex flex-col justify-between pt-10 sm:pt-14 md:pt-18">
         {/* ─── Left Content Block ─── */}
         <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-10 flex-1 flex items-center">
-          <div className="flex flex-col items-start gap-6 sm:gap-8 max-w-2xl py-12 sm:py-16 md:py-0 -translate-y-6 sm:-translate-y-8 md:-translate-y-12 transition-transform duration-200">
+          <div className="flex flex-col items-start gap-4 sm:gap-4 max-w-2xl py-12 sm:py-16 md:py-0 -translate-y-2 sm:-translate-y-4 md:-translate-y-6 lg:-translate-y-8 transition-transform duration-200">
             {/* Location Label (Eyebrow text) */}
             <p className="font-accent text-sm sm:text-base font-semibold italic text-white/90 tracking-wide">
               Your Trusted Real Estate Partner
@@ -23,20 +24,18 @@ const Hero: React.FC = () => {
 
             {/* Large Hero Heading */}
             <h1 className="font-display text-[52px] sm:text-[64px] md:text-[72px] lg:text-[88px] font-bold text-white leading-[1.02] tracking-tight">
-              Connecting
-              <br />
-              Vision with
-              <br />
-              Reality
+              <TextRoll center={true}>
+                {"Connecting\nVision with\nReality"}
+              </TextRoll>
             </h1>
 
             {/* Supporting Description Paragraph */}
-            <p className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-white/85 max-w-lg mt-2">
+            <p className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-white/85 max-w-lg">
               Discover premium properties, expert guidance, and seamless real estate solutions tailored for you.
             </p>
 
             {/* CTA Button Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto mt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               {/* Primary Button — white fill, charcoal text, pill */}
               <a
                 href="#contact"
