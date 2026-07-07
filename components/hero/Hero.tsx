@@ -24,9 +24,12 @@ const Hero: React.FC = () => {
 
             {/* Large Hero Heading */}
             <h1 className="font-display text-[52px] sm:text-[64px] md:text-[72px] lg:text-[88px] font-bold text-white leading-[1.02] tracking-tight">
-              <TextRoll center={true}>
-                {"Connecting\nVision with\nReality"}
-              </TextRoll>
+              <TextRoll center={true}>Connecting</TextRoll>
+              <br />
+              <TextRoll center={true}>Vision</TextRoll>{" "}
+              <TextRoll center={true}>with</TextRoll>
+              <br />
+              <TextRoll center={true}>Reality</TextRoll>
             </h1>
 
             {/* Supporting Description Paragraph */}
@@ -39,7 +42,7 @@ const Hero: React.FC = () => {
               {/* Primary Button — white fill, charcoal text, pill */}
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-charcoal font-sans text-sm font-semibold rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200 select-none"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-white border border-transparent text-charcoal font-sans text-sm font-semibold rounded-full shadow-sm hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 ease-in-out select-none"
               >
                 Get in touch
               </a>
@@ -47,7 +50,7 @@ const Hero: React.FC = () => {
               {/* Secondary Button — transparent, white border, white text, pill */}
               <a
                 href="#details"
-                className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/40 text-white font-sans text-sm font-semibold rounded-full hover:bg-white/10 transition-colors duration-200 select-none"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/70 text-white font-sans text-sm font-semibold rounded-full hover:bg-white hover:text-charcoal hover:border-white transition-all duration-300 ease-in-out select-none"
               >
                 Explore Properties
               </a>
